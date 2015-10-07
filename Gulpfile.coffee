@@ -5,6 +5,7 @@ express     = require('express')
 app         = require('./app')
 livereload  = require('gulp-livereload')
 path        = require('path')
+mongoose    = require('mongoose')
 
 gulp.task 'coffee', ->
   gulp.src('./src/**/*.coffee')
@@ -17,6 +18,11 @@ gulp.task 'jade', ->
 
 gulp.task 'express', ->
   app.use express.static(path.resolve('./public'))
+
+  console.log 'Connecting to Mongo'
+  mongoose.connect('mongodb://localhost/chokak')
+  console.log 'Connected.'
+
   app.listen 1337
   gutil.log 'Listening on port: 1337'
 

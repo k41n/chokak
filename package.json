@@ -32,6 +32,8 @@
     "gulp-util": "^3.0.6",
     "jscoverage": "^0.6.0",
     "mocha": "^2.3.3",
+    "mocha-mongoose": "^1.1.0",
+    "mongodb": "^2.0.45",
     "should": "^7.1.0",
     "supertest": "^1.1.0",
     "tiny-lr": "^0.2.0"

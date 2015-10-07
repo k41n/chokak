@@ -1,3 +1,3 @@
 module.exports =
   db:
-    mongodb: 'mongodb://localhost/chat'
+    mongodb: 'mongodb://localhost/chokak_test'
