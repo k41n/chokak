@@ -1,8 +1,10 @@
 app = angular.module('chokak')
 
 class PeopleService
-  constructor: ->
+  constructor: (@PeopleResource)->
+    @loading = @PeopleResource.query (data) =>
+      @people = data
 
-PeopleService.$inject = [ ]
+PeopleService.$inject = [ 'PeopleResource' ]
 app.service 'PeopleService', PeopleService
 

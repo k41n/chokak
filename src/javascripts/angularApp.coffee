@@ -1,4 +1,6 @@
-app = angular.module 'chokak', []
+app = angular.module 'chokak', [
+  'ngResource'
+]
 
 app.controller 'DashboardController', [ '$scope', '$http', ($scope, $http) ->
   $scope.test = 'Hello world!12'

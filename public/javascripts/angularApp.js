@@ -1,6 +1,6 @@
 var app;
 
-app = angular.module('chokak', []);
+app = angular.module('chokak', ['ngResource']);
 
 app.controller('DashboardController', [
   '$scope', '$http', function($scope, $http) {
