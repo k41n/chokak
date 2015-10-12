@@ -19,12 +19,12 @@ gulp.task 'jade', ->
 gulp.task 'express', ->
   app.use express.static(path.resolve('./public'))
 
-  console.log 'Connecting to Mongo'
   mongoose.connect('mongodb://localhost/chokak')
-  console.log 'Connected.'
 
   app.listen 1337
   gutil.log 'Listening on port: 1337'
+
+gulp.task 'compile', ['coffee']
 
 gulp.task 'watch', ->
   livereload.listen()
