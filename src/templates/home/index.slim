@@ -1,0 +1,11 @@
+.container
+  .row ng-repeat='person in dash.PeopleService.people'
+    .col-xs-6
+      | {{ person.name }}
+    .col-xs-6
+      | {{ person.status }}
+  .row
+    a.btn.btn-primary.col-xs-12 href='/#/people/new'
+      | Add person
+
+

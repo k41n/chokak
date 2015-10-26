@@ -18,6 +18,7 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-resource/angular-resource.js',
       'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/ui-router/release/angular-ui-router.js',
       'public/javascripts/**/*.js',
       'test/angular/**/*.coffee'
     ],

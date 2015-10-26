@@ -6,9 +6,11 @@ html
       link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet')
       link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css', rel='stylesheet')
     block external-javascripts
-      script(src="//code.angularjs.org/1.4.7/angular.min.js")
-      script(src="//code.angularjs.org/1.4.7/angular-resource.min.js")
+      script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js")
+      script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js")
+      script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
+      script(src="//code.jquery.com/jquery-2.1.4.min.js")
       script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
-    script(src='/javascripts/app-f39cfbd2f8.js', type='text/javascript' )
-  body(ng-app='chokak' ng-controller='DashboardController as dash')
-    block content
+    script(src='/javascripts/app-8bf649f350.js', type='text/javascript' )
+  body(ng-app='chokak')
+    ui-view

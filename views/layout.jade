@@ -6,15 +6,20 @@ html
       link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet')
       link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css', rel='stylesheet')
     block external-javascripts
-      script(src="//code.angularjs.org/1.4.7/angular.min.js")
-      script(src="//code.angularjs.org/1.4.7/angular-resource.min.js")
+      script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js")
+      script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js")
+      script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
+      script(src="//code.jquery.com/jquery-2.1.4.min.js")
       script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
     //- build:js /javascripts/app.js
     block javascripts
       script(src="../public/javascripts/angularApp.js")
+      script(src="../build/templates/templates.js")
+      script(src="../public/javascripts/routes.js")
       script(src="../public/javascripts/controllers/dashboard_controller.js")
+      script(src="../public/javascripts/controllers/new_person_controller.js")
       script(src="../public/javascripts/services/people.js")
       script(src="../public/javascripts/resources/people_resource.js")
     //- endbuild
-  body(ng-app='chokak' ng-controller='DashboardController as dash')
-    block content
+  body(ng-app='chokak')
+    ui-view

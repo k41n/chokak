@@ -1,17 +1,27 @@
-gulp        = require('gulp')
-coffee      = require('gulp-coffee')
-gutil       = require('gulp-util')
-express     = require('express')
-app         = require('./app')
-livereload  = require('gulp-livereload')
-path        = require('path')
-mongoose    = require('mongoose')
-usemin      = require('gulp-jade-usemin')
-uglify      = require('gulp-uglify')
-minifyHtml  = require('gulp-minify-html')
-minifyCss   = require('gulp-minify-css')
-rev         = require('gulp-rev')
-clean       = require('gulp-clean')
+gulp          = require('gulp')
+coffee        = require('gulp-coffee')
+gutil         = require('gulp-util')
+express       = require('express')
+app           = require('./app')
+livereload    = require('gulp-livereload')
+path          = require('path')
+mongoose      = require('mongoose')
+usemin        = require('gulp-jade-usemin')
+uglify        = require('gulp-uglify')
+minifyHtml    = require('gulp-minify-html')
+minifyCss     = require('gulp-minify-css')
+rev           = require('gulp-rev')
+clean         = require('gulp-clean')
+templateCache = require('gulp-angular-templatecache')
+slim          = require("gulp-slim")
+
+gulp.task 'templates', ->
+  gulp.src('src/templates/**/*.slim')
+    .pipe(slim({
+      pretty: true
+    }))
+    .pipe(templateCache({module: 'chokak'}))
+    .pipe(gulp.dest('build/templates'))
 
 gulp.task 'coffee', ['clean'],  ->
   gulp.src('./src/**/*.coffee')
@@ -22,7 +32,7 @@ gulp.task 'coffee', ['clean'],  ->
 gulp.task 'jade', ->
   livereload.reload()
 
-gulp.task 'usemin', ['coffee'], ->
+gulp.task 'usemin', ['coffee', 'templates'], ->
   gulp.src('./views/*.jade')
     .pipe(usemin({
       css: [minifyCss(), 'concat'],
