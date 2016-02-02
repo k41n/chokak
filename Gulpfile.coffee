@@ -48,7 +48,7 @@ gulp.task 'clean', ->
 gulp.task 'express', ['usemin'], ->
   app.use express.static(path.resolve('./public'))
 
-  mongoose.connect('mongodb://localhost/chokak')
+  mongoose.connect('mongodb://localhost/chokak') unless mongoose.connection.readyState
   mongoose.set('debug', true)
 
   app.listen 1337

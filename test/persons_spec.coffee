@@ -16,8 +16,7 @@ name = 'Ivan Ivanov'
 
 describe 'API', ->
   before (done) ->
-
-    mongoose.connect(dbURI)
+    mongoose.connect(dbURI) unless mongoose.connection.readyState
     clearDB(done)
 
   describe 'People', ->
